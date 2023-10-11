@@ -12,6 +12,7 @@ import "../samples/SimpleAccount.sol";
  */
 contract TestExpiryAccount is SimpleAccount {
     using ECDSA for bytes32;
+    using MessageHashUtils for bytes32;
 
     mapping(address => uint48) public ownerAfter;
     mapping(address => uint48) public ownerUntil;

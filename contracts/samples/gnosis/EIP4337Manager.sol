@@ -6,6 +6,7 @@ pragma solidity ^0.8.7;
 /* solhint-disable reason-string */
 
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import "@gnosis.pm/safe-contracts/contracts/GnosisSafe.sol";
 import "@gnosis.pm/safe-contracts/contracts/base/Executor.sol";
 import "@gnosis.pm/safe-contracts/contracts/examples/libraries/GnosisSafeStorage.sol";
@@ -15,6 +16,7 @@ import "../../interfaces/IEntryPoint.sol";
 import "../../utils/Exec.sol";
 
     using ECDSA for bytes32;
+    using MessageHashUtils for bytes32;
 
 /**
  * Main EIP4337 module.

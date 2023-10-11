@@ -7,10 +7,12 @@ import "@gnosis.pm/safe-contracts/contracts/handler/DefaultCallbackHandler.sol";
 import "@gnosis.pm/safe-contracts/contracts/GnosisSafe.sol";
 import "@openzeppelin/contracts/interfaces/IERC1271.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import "../../interfaces/IAccount.sol";
 import "./EIP4337Manager.sol";
 
 using ECDSA for bytes32;
+using MessageHashUtils for bytes32;
 
 /**
  * The GnosisSafe enables adding custom functions implementation to the Safe by setting a 'fallbackHandler'.
