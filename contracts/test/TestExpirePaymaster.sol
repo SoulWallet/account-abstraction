@@ -8,7 +8,7 @@ import "../core/BasePaymaster.sol";
  */
 contract TestExpirePaymaster is BasePaymaster {
     // solhint-disable no-empty-blocks
-    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint)
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint, msg.sender)
     {}
 
     function _validatePaymasterUserOp(UserOperation calldata userOp, bytes32 userOpHash, uint256 maxCost)

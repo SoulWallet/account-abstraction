@@ -8,7 +8,7 @@ import "../core/BasePaymaster.sol";
  */
 contract TestPaymasterAcceptAll is BasePaymaster {
 
-    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint) {
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint, msg.sender) {
         // to support "deterministic address" factory
         // solhint-disable avoid-tx-origin
         if (tx.origin != msg.sender) {

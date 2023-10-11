@@ -25,7 +25,7 @@ contract TokenPaymaster is BasePaymaster, ERC20 {
 
     address public immutable theFactory;
 
-    constructor(address accountFactory, string memory _symbol, IEntryPoint _entryPoint) ERC20(_symbol, _symbol) BasePaymaster(_entryPoint) {
+    constructor(address accountFactory, string memory _symbol, IEntryPoint _entryPoint) ERC20(_symbol, _symbol) BasePaymaster(_entryPoint,msg.sender) {
         theFactory = accountFactory;
         //make it non-empty
         _mint(address(this), 1);

@@ -36,7 +36,7 @@ contract DepositPaymaster is BasePaymaster {
     mapping(IERC20 => mapping(address => uint256)) public balances;
     mapping(address => uint256) public unlockBlock;
 
-    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint) {
+    constructor(IEntryPoint _entryPoint) BasePaymaster(_entryPoint, msg.sender) {
         //owner account is unblocked, to allow withdraw of paid tokens;
         unlockTokenDeposit();
     }
